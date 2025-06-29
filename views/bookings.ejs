@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Bookings</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <h1>All Bookings</h1>
+
+  <div style="text-align: center;">
+    <a href="/bookings/new">Make New Booking</a>
+    <a href="/hotels/register">Register New Hotel</a>
+    <a href="/hotels/list">Unregister Hotel</a> <!-- 👈 Unregister Hotel button -->
+  </div>
+
+  <% if (message) { %>
+    <div class="alert-success">
+      <%= message %>
+    </div>
+  <% } %>
+
+  <ul>
+    <% bookings.forEach(function(booking) { %>
+      <li>
+        <p><strong><%= booking.customerName %></strong> booked <strong><%= booking.hotelId.name %></strong></p>
+        <p>Check-In: <%= booking.checkInDate.toDateString() %></p>
+        <p>Check-Out: <%= booking.checkOutDate.toDateString() %></p>
+
+        <form action="/bookings/<%= booking._id %>/delete" method="POST">
+          <button type="submit" class="cancel-btn"
+            onclick="return confirm('Are you sure you want to cancel this hotel booking?')">
+            Cancel Hotel
+          </button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get('success') === 'cancel') {
+      alert('Your booking has been cancelled.');
+    } else if (params.get('success') === 'book') {
+      alert('Your booking has been confirmed.');
+    } else if (params.get('success') === 'register') {
+      alert('Hotel has been successfully registered.');
+    } else if (params.get('success') === 'unregister') {
+      alert('Hotel has been unregistered.');
+    }
+
+    if (params.get('success')) {
+      const url = new URL(window.location);
+      url.searchParams.delete('success');
+      window.history.replaceState({}, document.title, url.toString());
+    }
+  </script>
+
+</body>
+
+</html>

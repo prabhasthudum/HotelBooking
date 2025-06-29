@@ -1,0 +1,14 @@
+<h1>Book a Hotel</h1>
+<link rel="stylesheet" href="/style.css">
+<a href="/bookings">Back to Bookings</a>
+<form action="/bookings/new" method="POST">
+  <input name="customerName" placeholder="Your Name" required><br>
+  <select name="hotelId" required>
+    <% hotels.forEach(hotel => { %>
+      <option value="<%= hotel._id %>"><%= hotel.name %> - <%= hotel.location %></option>
+    <% }); %>
+  </select><br>
+  <input type="date" name="checkInDate" required><br>
+  <input type="date" name="checkOutDate" required><br>
+  <button type="submit">Book Now</button>
+</form>

@@ -1,0 +1,162 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Base styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Forms */
+form {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 25px;
+  max-width: 450px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Inputs & Selects */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7ed957;
+  border-radius: 8px;
+  font-size: 15px;
+  background: linear-gradient(135deg, #eaffea 0%, #c6f7d4 100%);
+  box-shadow: 0 2px 8px rgba(126, 217, 87, 0.10);
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #4ecb4b;
+  background: linear-gradient(135deg, #d4ffd4 0%, #b2f2c9 100%);
+  box-shadow: 0 0 0 3px rgba(126, 217, 87, 0.18);
+  outline: none;
+}
+
+input:hover, select:hover {
+  border-color: #4ecb4b;
+  background: linear-gradient(135deg, #e0ffe0 0%, #b2f2c9 100%);
+  box-shadow: 0 0 0 2px rgba(126, 217, 87, 0.13);
+}
+
+/* Primary Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4b2b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #e03e1a;
+}
+
+/* Cancel Button (Specific) */
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #b02a37;
+}
+
+
+.cancel-btn:hover {
+  background-color: #b02a37;
+}
+
+/* Bookings List */
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Links */
+a {
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 15px;
+  color: #fff;
+  background: #007BFF;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+a:hover {
+  background: #0056b3;
+}
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  margin: 20px auto;
+  max-width: 450px;
+  border-left: 5px solid #28a745;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px 20px;
+  margin: 20px auto;
+  max-width: 450px;
+  border-left: 5px solid #dc3545;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
